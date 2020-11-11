@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app="myApp">
+		<p><a href="#/!">Main</a></p>
+
+		<a href="index3.html">Por sua conta e risco!</a>
+		<a href="index2.html">Oi!</a>
+		<a href="index4.html">Fale comigo!</a>
+
+
+		<p>Clique nesse link para mudar o conteúdo</p>
+
+
+		<p>O HTML mostrado na diretiva ng-view é gravado na propriedade template do método $routeProvider .when</p>
+
+		<div ng-view></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.js"></script>
+
+
+	<script type="text/javascript">
+		var app = angular.module("myApp", ["ngRoute"]);
+		app.config(function($routeProvider){
+			$routeProvider
+			.when("/", {
+				template : "<h1>Main</h1><p>Clique nesse link para mudar o conteudo</p>"
+			})
+			.when("/index2.html", {
+				template : "<h1>Eae</h1><p>Chega mais!</p>"
+			})
+			.when("/index3.html", {
+				template : "<h1>Cat</h1><p>Cat</p>"
+			})
+			.when("/index4.html", {
+				template : "<h1>Forms</h1><p>Preencha seus dados</p>"
+			});
+		});
+	</script>
+
+	</body>
+</html>
